@@ -19,3 +19,8 @@ The algorithm extends Dijkstra's shortest-path method into a two-dimensional sta
 - Total journey time (driving + charging)
 
 ## Demonstration
+<img width="1180" height="643" alt="Screenshot 2026-07-10 150404" src="https://github.com/user-attachments/assets/c7cf9657-0312-469e-b3ca-5c005eba842e" />
+<img width="1192" height="622" alt="Screenshot 2026-07-10 150433" src="https://github.com/user-attachments/assets/5eff8a1e-2311-4064-99bf-eded307f3c9d" />
+<img width="1185" height="493" alt="Screenshot 2026-07-10 150503" src="https://github.com/user-attachments/assets/5a6d5b19-3a96-4f1a-a145-a2fe221610dc" />
+
+
