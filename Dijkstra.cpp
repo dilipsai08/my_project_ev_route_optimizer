@@ -6,7 +6,7 @@ Ans Dijkstra::modified_dijkstra(Graph &graph, int src, int dst,
 {
     int n = graph.findTotalNodes();
     vector<vector<bool>> visited(n, vector<bool>(full_range + 1, false));
-    auto cmp = [](const State &a, State &b)
+    auto cmp = [](const State &a, const State &b)
     {
         return a.total_time > b.total_time;
     };

@@ -40,6 +40,7 @@ int main()
         cin >> numCities;
         cout << "Enter number of charging stations: " << endl;
         cin >> numChargingStations;
+        cin.ignore();
         totalNodes = numCities + numChargingStations;
         g = Graph(totalNodes);
 
@@ -90,19 +91,26 @@ int main()
     cin >> src;
     cout << "\nEnter the destination city node number from the above list ";
     cin >> dst;
-    if (src == -1 || dst == -1)
+    if (src < 0 || src >= numCities || dst < 0 || dst >= numCities || src == dst)
     {
-        cout << "\nCity not found! Please enter exact city node number ." << endl;
+        cout << "\nInvalid input! Source and destination must be valid, distinct city numbers (0 to "
+             << numCities - 1 << ")." << endl;
         return 1;
     }
     int full_range, current_range;
     double charge_pct;
     cout << "\nEnter full charge range(km) of your EV ";
     cin >> full_range;
+    if (full_range <= 0) {
+        cout << "\nFull range must be a positive number." << endl;
+        return 1;
+    }
     cout << endl;
     cout << "Current battery %% ";
     cin >> charge_pct;
     cout << endl;
+    if (charge_pct < 0)   charge_pct = 0;
+    if (charge_pct > 100)  charge_pct = 100;
     current_range = (int)(charge_pct / 100.0 * full_range);
     if (current_range > full_range)
         current_range = full_range;

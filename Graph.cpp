@@ -40,11 +40,14 @@ int Graph::findTotalNodes() const {
     return totalNodes;
 }
 int Graph::findEdge_Wt(int u, int v) const {
+    if (u < 0 || u >= totalNodes || v < 0 || v >= totalNodes) return -1;
     for (auto& edge : adj[u]) {
         if (edge.first == v) return edge.second;
     }
     return -1; // no direct edge
 }
+static const vector<pair<int,int>> empty_neighbors;
 const vector<pair<int,int>>& Graph::getNeighbors(int node) const {
+    if (node < 0 || node >= totalNodes) return empty_neighbors;
     return adj[node];
 }
